@@ -45,10 +45,16 @@ export TF_STATE_DYNAMODB_TABLE=<name of your Dynamo table>
 terragrunt plan
 ```
 
-### Create your VPC:
+### Create your VPC
 
 ```
+# Optionally set the region to use. Default is eu-west-2
+export TF_VAR_aws_region="eu-west-2"
+
+# Initialize Terraform
 terraform init
+
+# Create specified resources
 terraform apply
 ```
 
@@ -59,5 +65,8 @@ This will delete all the resources created by this code.
 **Note:** If you configured an S3 backend, the S3 bucket and Dynamo table will not be deleted.
 
 ```
+# Set the region to use if changed changed from default eu-west-2
+export TF_VAR_aws_region="eu-west-2"
+
 terraform destroy
 ```

@@ -5,12 +5,12 @@ output "vpc_id" {
 
 output "private_subnet_cidr_blocks" {
   description = "The CIDR blocks for all private subnets of the VPC"
-  value       = module.vpc.private_subnets
+  value       = module.vpc.private_subnets_cidr_blocks
 }
 
 output "public_subnet_cidr_blocks" {
   description = "The CIDR blocks for all public subnets of the VPC"
-  value       = module.vpc.public_subnets
+  value       = module.vpc.public_subnets_cidr_blocks
 }
 
 output "nat_gateway_public_ip_address" {
